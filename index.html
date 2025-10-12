@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+    <title>Parad Shop</title>
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+<header class="site-header">
+    <button class="header-button home-button" aria-label="Домой">
+        <img src="public/home-icon.svg" alt="Домой" class="icon">
+    </button>
+    <div class="search-bar">
+        <img src="public/search.svg" alt="Поиск" class="search-icon">
+        <input type="text" placeholder="Поиск товаров..." class="search-input" id="searchInput">
+    </div>
+    <div class="header-actions">
+        <button class="header-button favorites-button" aria-label="Понравившиеся">
+            <img src="public/izbran.svg" alt="Понравившиеся" class="icon">
+            <span class="badge" id="favoritesCount">0</span>
+        </button>
+        <button class="header-button cart-button" aria-label="Корзина">
+            <img src="public/korzina.svg" alt="Корзина" class="icon">
+            <span class="badge" id="cartCount">0</span>
+        </button>
+    </div>
+</header>
+<main>
+    <section class="category">
+        <h2 class="category-title">Худи</h2>
+        <div class="products" id="hoodies">
+            <article class="product-card" data-id="1">
+                <button class="like-button" aria-label="Лайк">
+                    <img src="public/heartred.svg" alt="Лайк" class="like-icon">
+                </button>
+                <img src="public/product.svg" alt="Худи с принтом" class="product-image">
+                <div class="product-price-wrapper">
+                    <img src="public/skidka.svg" alt="Скидка" class="discount-icon">
+                    <span class="product-price">999 <span class="rub">₽</span></span>
+                    <span class="product-old-price">1199 <span class="rub">₽</span></span>
+                </div>
+                <p class="product-title">Худи с принтом</p>
+                <button class="add-to-cart" data-id="1">В корзину</button>
+            </article>
+            <article class="product-card" data-id="2">
+                <button class="like-button" aria-label="Лайк">
+                    <img src="public/heartred.svg" alt="Лайк" class="like-icon">
+                </button>
+                <img src="public/product.svg" alt="Худи с принтом" class="product-image">
+                <span class="product-price">1199 <span class="rub">₽</span></span>
+                <p class="product-title">Худи с принтом</p>
+                <button class="add-to-cart" data-id="2">В корзину</button>
+            </article>
+            <article class="product-card" data-id="3">
+                <button class="like-button" aria-label="Лайк">
+                    <img src="public/heartred.svg" alt="Лайк" class="like-icon">
+                </button>
+                <img src="public/product.svg" alt="Худи с принтом" class="product-image">
+                <span class="product-price">1199 <span class="rub">₽</span></span>
+                <p class="product-title">Худи с принтом</p>
+                <button class="add-to-cart" data-id="3">В корзину</button>
+            </article>
+            <article class="product-card" data-id="4">
+                <button class="like-button" aria-label="Лайк">
+                    <img src="public/heartred.svg" alt="Лайк" class="like-icon">
+                </button>
+                <img src="public/product.svg" alt="Худи с принтом" class="product-image">
+                <span class="product-price">1199 <span class="rub">₽</span></span>
+                <p class="product-title">Худи с принтом</p>
+                <button class="add-to-cart" data-id="4">В корзину</button>
+            </article>
+            <article class="product-card" data-id="5">
+                <button class="like-button" aria-label="Лайк">
+                    <img src="public/heartred.svg" alt="Лайк" class="like-icon">
+                </button>
+                <img src="public/product.svg" alt="Худи с принтом" class="product-image">
+                <span class="product-price">1199 <span class="rub">₽</span></span>
+                <p class="product-title">Худи с принтом</p>
+                <button class="add-to-cart" data-id="5">В корзину</button>
+            </article>
+            <article class="product-card" data-id="6">
+                <button class="like-button" aria-label="Лайк">
+                    <img src="public/heartred.svg" alt="Лайк" class="like-icon">
+                </button>
+                <img src="public/product.svg" alt="Худи с принтом" class="product-image">
+                <span class="product-price">1199 <span class="rub">₽</span></span>
+                <p class="product-title">Худи с принтом</p>
+                <button class="add-to-cart" data-id="6">В корзину</button>
+            </article>
+        </div>
+    </section>
+    <section class="category">
+        <h2 class="category-title">Шорты</h2>
+        <div class="products" id="shorts">
+            <article class="product-card" data-id="7">
+                <button class="like-button" aria-label="Лайк">
+                    <img src="public/heartred.svg" alt="Лайк" class="like-icon">
+                </button>
+                <img src="public/product.svg" alt="Широкие шорты" class="product-image">
+                <div class="product-price-wrapper">
+                    <img src="public/skidka.svg" alt="Скидка" class="discount-icon">
+                    <span class="product-price">999 <span class="rub">₽</span></span>
+                    <span class="product-old-price">1199 <span class="rub">₽</span></span>
+                </div>
+                <p class="product-title">Широкие шорты</p>
+                <button class="add-to-cart" data-id="7">В корзину</button>
+            </article>
+            <article class="product-card" data-id="8">
+                <button class="like-button" aria-label="Лайк">
+                    <img src="public/heartred.svg" alt="Лайк" class="like-icon">
+                </button>
+                <img src="public/product.svg" alt="Широкие шорты" class="product-image">
+                <div class="product-price-wrapper">
+                    <img src="public/skidka.svg" alt="Скидка" class="discount-icon">
+                    <span class="product-price">999 <span class="rub">₽</span></span>
+                    <span class="product-old-price">1199 <span class="rub">₽</span></span>
+                </div>
+                <p class="product-title">Широкие шорты</p>
+                <button class="add-to-cart" data-id="8">В корзину</button>
+            </article>
+            <article class="product-card" data-id="9">
+                <button class="like-button" aria-label="Лайк">
+                    <img src="public/heartred.svg" alt="Лайк" class="like-icon">
+                </button>
+                <img src="public/product.svg" alt="Широкие шорты" class="product-image">
+                <div class="product-price-wrapper">
+                    <img src="public/skidka.svg" alt="Скидка" class="discount-icon">
+                    <span class="product-price">999 <span class="rub">₽</span></span>
+                    <span class="product-old-price">1199 <span class="rub">₽</span></span>
+                </div>
+                <p class="product-title">Широкие шорты</p>
+                <button class="add-to-cart" data-id="9">В корзину</button>
+            </article>
+            <article class="product-card" data-id="10">
+                <button class="like-button" aria-label="Лайк">
+                    <img src="public/heartred.svg" alt="Лайк" class="like-icon">
+                </button>
+                <img src="public/product.svg" alt="Широкие шорты" class="product-image">
+                <span class="product-price">1199 <span class="rub">₽</span></span>
+                <p class="product-title">Широкие шорты</p>
+                <button class="add-to-cart" data-id="10">В корзину</button>
+            </article>
+            <article class="product-card" data-id="11">
+                <button class="like-button" aria-label="Лайк">
+                    <img src="public/heartred.svg" alt="Лайк" class="like-icon">
+                </button>
+                <img src="public/product.svg" alt="Широкие шорты" class="product-image">
+                <span class="product-price">1199 <span class="rub">₽</span></span>
+                <p class="product-title">Широкие шорты</p>
+                <button class="add-to-cart" data-id="11">В корзину</button>
+            </article>
+            <article class="product-card" data-id="12">
+                <button class="like-button" aria-label="Лайк">
+                    <img src="public/heartred.svg" alt="Лайк" class="like-icon">
+                </button>
+                <img src="public/product.svg" alt="Широкие шорты" class="product-image">
+                <span class="product-price">1199 <span class="rub">₽</span></span>
+                <p class="product-title">Широкие шорты</p>
+                <button class="add-to-cart" data-id="12">В корзину</button>
+            </article>
+        </div>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2025 Parad Shop</p>
+</footer>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
