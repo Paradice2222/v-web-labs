@@ -1,13 +1,10 @@
-// src/pages/home/HomePage.tsx
-import { Header } from '@/widgets/header/Header'
-import { Footer } from '@/widgets/footer/Footer'
 import { ProductList } from '@/widgets/product-list/ProductList'
 import { useProductStore } from '@/entities/product/model/useProductStore'
 import { products } from '@/shared/config/data'
 import { type TProduct } from '@/shared/config/data'
 
 export function HomePage() {
-  const { searchQuery } = useProductStore()
+  const searchQuery = useProductStore((state) => state.searchQuery)
 
   const filteredProducts = (category: 'hoodies' | 'shorts'): TProduct[] => {
     return products
@@ -22,22 +19,16 @@ export function HomePage() {
   const shorts = filteredProducts('shorts')
 
   return (
-    <>
-      <Header />
+    <main className="container mx-auto px-6 py-12">
+      <section className="mb-20">
+        <h2 className="text-4xl font-bold mb-8 text-gray-800">Худи</h2>
+        <ProductList products={hoodies} />
+      </section>
 
-      <main className="container mx-auto px-6 py-12">
-        <section className="mb-20">
-          <h2 className="text-4xl font-bold mb-8 text-gray-800">Худи</h2>
-          <ProductList products={hoodies} />
-        </section>
-
-        <section>
-          <h2 className="text-4xl font-bold mb-8 text-gray-800">Шорты</h2>
-          <ProductList products={shorts} />
-        </section>
-      </main>
-
-      <Footer />
-    </>
+      <section>
+        <h2 className="text-4xl font-bold mb-8 text-gray-800">Шорты</h2>
+        <ProductList products={shorts} />
+      </section>
+    </main>
   )
 }

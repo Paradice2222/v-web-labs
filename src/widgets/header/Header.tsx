@@ -1,29 +1,27 @@
-// src/widgets/header/Header.jsx
-
+import { Link } from 'react-router-dom';
 import { useProductStore } from '@/entities/product/model/useProductStore';
 
-// Пути к иконкам — из public/images (как мы договорились)
-const homeIcon = 'public/assets/home-icon.svg';
-const searchIcon = 'public/assets/search-icon.svg';
-const favoritesIcon = 'public/assets/favorites-icon.svg';
-const cartIcon = 'public/assets/cart-icon.svg';
+const homeIcon = '/assets/home-icon.svg';
+const searchIcon = '/assets/search-icon.svg';
+const favoritesIcon = '/assets/favorites-icon.svg';
+const cartIcon = '/assets/cart-icon.svg';
 
 export function Header() {
-    const cartCount = useProductStore((state) => state.cartItems.length);
-    const likedCount = useProductStore((state) => state.likedItems.length);
+    const cartItems = useProductStore((state) => state.cartItems);
+    const likedItems = useProductStore((state) => state.likedItems);
+    const searchQuery = useProductStore((state) => state.searchQuery);
+    const setSearchQuery = useProductStore((state) => state.setSearchQuery);
 
-    // ← Это всё, что нужно для поиска
-    const { searchQuery, setSearchQuery } = useProductStore();
+    // Считаем общее кол-во товаров (сумма всех count)
+    const totalCartCount = cartItems.reduce((acc, item) => acc + item.count, 0);
 
     return (
-        <header className="sticky top-0 z-50 flex items-center justify-between bg-white border-b border-gray-200 px-6 py-3 shadow-sm w-full">
-
-            {/* Кнопка домой */}
-            <button className="p-2 transition-transform hover:scale-110">
+        <header className="sticky top-0 z-50 flex items-center justify-between bg-white border-b border-gray-200 px-6 py-3 shadow-sm w-full h-16">
+            {/* Ссылка на главную */}
+            <Link to="/" className="p-2 transition-transform hover:scale-110">
                 <img src={homeIcon} alt="Домой" className="w-6 h-6" />
-            </button>
+            </Link>
 
-            {/* ← ОДИН ЕДИНСТВЕННЫЙ РАБОЧИЙ ПОИСК (оставляем только этот) */}
             <div className="relative flex-1 max-w-2xl mx-4">
                 <img
                     src={searchIcon}
@@ -39,25 +37,24 @@ export function Header() {
                 />
             </div>
 
-            {/* Избранное и корзина */}
             <div className="flex items-center gap-6">
-                <button className="relative p-2 transition-transform hover:scale-110">
+                <Link to="/favorites" className="relative p-2 transition-transform hover:scale-110">
                     <img src={favoritesIcon} alt="Избранное" className="w-6 h-6" />
-                    {likedCount > 0 && (
+                    {likedItems.length > 0 && (
                         <span className="absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full">
-                            {likedCount}
+                            {likedItems.length}
                         </span>
                     )}
-                </button>
+                </Link>
 
-                <button className="relative p-2 transition-transform hover:scale-110">
+                <Link to="/cart" className="relative p-2 transition-transform hover:scale-110">
                     <img src={cartIcon} alt="Корзина" className="w-6 h-6" />
-                    {cartCount > 0 && (
+                    {totalCartCount > 0 && (
                         <span className="absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full">
-                            {cartCount}
+                            {totalCartCount}
                         </span>
                     )}
-                </button>
+                </Link>
             </div>
         </header>
     );

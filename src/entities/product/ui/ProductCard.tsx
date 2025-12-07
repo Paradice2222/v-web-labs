@@ -26,7 +26,7 @@ export function ProductCard({ product, featureSlots }: Props) {
         <span className="font-semibold text-lg text-green-600">{price} ₽</span>
       </div>
 
-      <p className="text-base font-medium text-gray-700 w-full truncate">{title}</p>
+      <p className="text-base font-medium text-gray-700 w-full">{title}</p>
 
       <div className="mt-auto pt-4 w-full">
         {featureSlots?.addToCart}
